@@ -69,6 +69,8 @@ RUN cd /tmp && \
     make install && \
     rm -rf /tmp/*
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git-lfs
+
 RUN mkdir -p /home/runner ${AGENT_TOOLSDIRECTORY}
 
 WORKDIR /home/runner
